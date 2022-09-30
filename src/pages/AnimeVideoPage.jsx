@@ -22,11 +22,27 @@ const AnimeVideoPage = () => {
     }, [])
 
     return (
-        <Box padding='15px'>
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            padding: { xs: '0px', sm: '5px', md: '10px', lg: '15px' },
+            width: '100%'
+        }}>
             <Header isHome={false} />
-            <Box display='flex' marginTop='20px'>
+            <Box sx={{
+                display: 'flex',
+                flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row' },
+                marginTop: '20px',
+                padding: '15px',
+            }}
+            >
                 <AnimeSidebar />
-                <Box width='70%'>
+                <Box
+                    padding='5px'
+                    width='100%'
+                    display='flex'
+                    flexDirection='column'
+                >
                     <VideoPlayer anime={data} />
                     <EpisodesBody episodes={data?.episodesList} />
                 </Box>

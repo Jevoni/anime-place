@@ -16,17 +16,24 @@ const AnimeDetailsPage = () => {
     if (isFetching) return 'Loading...'
 
     return (
-        <Box padding='15px'>
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            padding: { xs: '0px', sm: '5px', md: '10px', lg: '15px' },
+            width: '100%'
+        }}>
             <Header isHome={false} />
-            <Box
-                display='flex'
-                marginTop='20px'
-                padding='15px'
+            <Box sx={{
+                display: 'flex',
+                flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row' },
+                marginTop: '20px',
+                padding: '15px',
+            }}
             >
                 <AnimeSidebar />
                 <Box
                     padding='5px'
-                    width='70%'
+                    width='100%'
                     display='flex'
                     flexDirection='column'
                 >
@@ -36,7 +43,7 @@ const AnimeDetailsPage = () => {
                 <Sidebar />
             </Box>
             <Footer />
-        </Box>
+        </Box >
     )
 }
 

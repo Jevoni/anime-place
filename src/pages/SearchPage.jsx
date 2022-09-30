@@ -16,11 +16,20 @@ const SearchPage = () => {
     if (isFetching) return 'Loading'
 
     return (
-        <Box padding='15px'>
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            padding: { xs: '0px', sm: '0px', md: '0px', lg: '15px' },
+            width: '100%'
+        }}>
             <Header isHome={false} />
-            <Box display='flex'
-                padding='15px'
-                justifyContent='space-between'
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row' },
+                    padding: { xs: '0px', sm: '0px', md: '0px', lg: '15px' },
+                }}
             >
                 <Body data={data} isSearch={true} />
                 <Sidebar />

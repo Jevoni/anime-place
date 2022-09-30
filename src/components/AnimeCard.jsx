@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { searchType } from '../services/searchSlice'
@@ -9,10 +9,13 @@ const AnimeCard = ({ data, isSearch }) => {
 
     return (
         <Box
-            textAlign='center'
-            padding='5px'
-            margin='2px'
-            backgroundColor='#fddcb5'
+            sx={{
+                textAlign: 'center',
+                padding: '5px',
+                margin: '2px',
+                backgroundColor: '#fddcb5',
+                width: { xs: '48.7%', sm: '32.5%', md: '24.5%', lg: 'auto' }
+            }}
         >
             <Link style={{ textDecoration: 'none', }} to={`/animeDetails/${data?.animeId}`}>
                 <Box
@@ -23,13 +26,19 @@ const AnimeCard = ({ data, isSearch }) => {
                 />
             </Link>
             <Box paddingTop='10px'>
-                <Link to={`/animeDetails/${data?.animeId}`} style={{ textDecoration: 'none', color: 'black' }}><Typography fontSize='14px' fontWeight='bold' width='170px'>{data?.animeTitle}</Typography></Link>
+                <Link to={`/animeDetails/${data?.animeId}`} style={{ textDecoration: 'none', color: 'black' }}>
+                    <Typography fontSize='14px' fontWeight='bold' sx={{
+                        width: { xs: '100%', sm: '100%', md: '100%', lg: '170px' }
+                    }}>
+                        {data?.animeTitle}
+                    </Typography>
+                </Link>
+
                 {(search === 'recent-release' && !isSearch) ?
                     <Typography fontSize='14px'>Episode {data?.episodeNum}</Typography>
                     :
                     null
                 }
-
             </Box>
         </Box >
     )

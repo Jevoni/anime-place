@@ -9,7 +9,12 @@ const Header = ({ isHome, isGenre }) => {
     return (
         <Box>
             <AnimeLogo />
-            <Box display='flex' justifyContent='space-between'>
+            <Box sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                flexDirection: { xs: 'column', sm: 'column', md: 'row' }
+            }}
+            >
                 <Navbar isHome={isHome} isGenre={isGenre} />
                 <Searchbar />
             </Box>

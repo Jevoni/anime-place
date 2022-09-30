@@ -21,9 +21,15 @@ const Navbar = ({ isHome, isGenre }) => {
             color: 'black',
             paddingTop: '15px'
         }}>
-            <Button variant='filled' style={{ fontWeight: 'bold', border: '2px solid #fddcb5', marginRight: '3px', borderRadius: '20px' }} value='recent-release' onClick={onClickHandler}>Recent Episodes</Button>
-            <Button variant='filled' style={{ fontWeight: 'bold', border: '2px solid #fddcb5', marginRight: '3px', borderRadius: '20px' }} value='popular' onClick={onClickHandler}>Popular Anime</Button>
-            <Button variant='filled' style={{ fontWeight: 'bold', border: '2px solid #fddcb5', marginRight: '3px', borderRadius: '20px' }} value='anime-movies' onClick={onClickHandler}>Anime Movies</Button>
+            <Box sx={{
+                display: 'flex',
+                justifyContent: 'center'
+            }}>
+
+                <Button variant='filled' style={{ fontWeight: 'bold', border: '2px solid #fddcb5', marginRight: '3px', borderRadius: '20px' }} value='recent-release' onClick={onClickHandler}>Recent Episodes</Button>
+                <Button variant='filled' style={{ fontWeight: 'bold', border: '2px solid #fddcb5', marginRight: '3px', borderRadius: '20px' }} value='popular' onClick={onClickHandler}>Popular Anime</Button>
+                <Button variant='filled' style={{ fontWeight: 'bold', border: '2px solid #fddcb5', marginRight: '3px', borderRadius: '20px' }} value='anime-movies' onClick={onClickHandler}>Anime Movies</Button>
+            </Box>
             {isHome ?
                 <Typography paddingTop='20px' paddingBottom='35px' fontSize='16.5px'>Showing: {searchT}</Typography>
                 : null
@@ -32,7 +38,6 @@ const Navbar = ({ isHome, isGenre }) => {
                 <Typography paddingTop='20px' paddingBottom='35px' fontSize='16.5px'>Showing: {genre} animes</Typography>
                 : null
             }
-
         </Box>
     )
 }

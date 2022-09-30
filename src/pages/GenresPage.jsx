@@ -15,11 +15,20 @@ const GenresPage = () => {
     if (isFetching) return 'Loading'
 
     return (
-        <Box padding='15px'>
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            padding: { xs: '0px', sm: '5px', md: '10px', lg: '15px' },
+            width: '100%'
+        }}>
             <Header isGenre={true} />
-            <Box display='flex'
-                padding='15px'
-                justifyContent='space-between'
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row' },
+                    padding: { xs: '0px', sm: '5px', md: '10px', lg: '15px' },
+                }}
             >
                 <Body data={data} isSearch={true} />
                 <Sidebar />

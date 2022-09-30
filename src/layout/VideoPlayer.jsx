@@ -12,7 +12,15 @@ const VideoPlayer = ({ anime }) => {
 
     return (
         <Box display='flex' flexDirection='column' alignItems='center'>
-            <Typography fontWeight='bold' variant='h4' paddingBottom='25px'>{anime?.animeTitle}</Typography>
+            <Typography sx={{
+                fontWeight: 'bold',
+                fontSize: { xs: '18px', sm: '20px', md: '21.5px', lg: '23px' },
+                paddingBottom: '25px'
+            }}
+            >
+                {anime?.animeTitle}
+            </Typography>
+
             <Box width='100%' display='flex' justifyContent='center'>
                 <ReactPlayer height='490px' width='850px' controls url={data?.sources_bk[0].file} config={{
                     file: {
@@ -20,9 +28,10 @@ const VideoPlayer = ({ anime }) => {
                     }
                 }} />
             </Box>
-            <Typography paddingTop='15px'>Episode {episodeNum}</Typography>
+            <Typography paddingTop='15px'>
+                Episode {episodeNum}
+            </Typography>
         </Box >
-
     )
 }
 

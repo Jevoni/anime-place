@@ -4,22 +4,27 @@ import { Typography, Box } from '@mui/material'
 
 const AnimeDetailsBody = ({ data }) => {
     return (
-        <Box
-            padding='5px'
-            width='70%'
-            display='flex'
+        <Box sx={{
+            padding: '5px',
+            width: '100%',
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'column', md: 'row' }
+        }}
         >
-            <Box
-                display='flex'
-                flexDirection='column'
-                alignItems='center'
-                width='60%'
-                textAlign='center'
+            <Box sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                width: { xs: '100%', sm: '100%', md: '50%' },
+                textAlign: 'center'
+            }}
             >
                 <Box
                     component='img'
-                    height='500px'
-                    width='340px'
+                    sx={{
+                        height: { xs: '400px' },
+                        width: { xs: '240px' }
+                    }}
                     src={data.animeImg}
                     alt='Thumbnail of the anime'
                 />
@@ -27,9 +32,10 @@ const AnimeDetailsBody = ({ data }) => {
                     <Typography fontSize='14px' fontWeight='bold'>{data.animeTitle}</Typography>
                 </Box>
             </Box>
-            <Box
-                padding='5px'
-                width='50%'
+            <Box sx={{
+                padding: '5px',
+                width: { xs: '100%', sm: '100%', md: '50%' }
+            }}
             >
                 <Typography fontSize='19px' fontWeight='bold'>{data.animeTitle}</Typography>
                 <Box paddingTop='17px'>

@@ -7,9 +7,15 @@ import GenresPage from './pages/GenresPage';
 import Homepage from './pages/Homepage';
 import SearchPage from './pages/SearchPage';
 
+import './App.css'
+
 function App() {
   return (
-    <div style={{ backgroundColor: '#fab96b' }}>
+    <div style={{
+      backgroundColor: '#fab96b',
+      width: 'auto',
+      minHeight: '100vh'
+    }}>
       <CssBaseline />
       <Routes>
         <Route exact path='/' element={<Homepage />} />

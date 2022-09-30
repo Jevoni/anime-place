@@ -8,7 +8,7 @@ const AnimeSidebar = () => {
     const { data, isFetching } = useGetRequestQuery('recent-release')
 
     return (
-        <Box display='flex' flexDirection='column'>
+        <Box className='anime-bar' >
             <Typography paddingBottom='10px'>Recent Animes: </Typography>
             {data?.slice(0, 4).map((data, i) => (
                 <AnimeCard data={data} key={i} />

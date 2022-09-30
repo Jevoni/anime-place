@@ -1,0 +1,14 @@
+.anime-bar {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width:1200px) {
+    .anime-bar {
+        display: none;
+    }
+
+    .genre-bar {
+        display: none;
+    }
+}

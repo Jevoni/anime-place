@@ -14,7 +14,10 @@ const APLogo = () => {
     }
 
     return (
-        <Box>
+        <Box sx={{
+            display: 'flex',
+            justifyContent: 'center'
+        }}>
             <Button variant='filled' style={{ fontWeight: 'bold', padding: '0' }} value='recent-release' onClick={onClickHandler}>Anime Place</Button>
         </Box >
     )

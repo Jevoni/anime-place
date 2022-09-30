@@ -20,6 +20,9 @@ const Searchbar = () => {
             paddingLeft: '8px',
             paddingTop: '6px',
             paddingBottom: '6px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
         }}>
             <form
                 onSubmit={onSubmitHandler}
