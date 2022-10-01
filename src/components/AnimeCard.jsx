@@ -45,4 +45,4 @@ const AnimeCard = ({ data, isSearch }) => {
     )
 }
 
-export default AnimeC
+export default AnimeCard
