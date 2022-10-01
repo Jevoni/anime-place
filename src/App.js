@@ -13,8 +13,8 @@ function App() {
   return (
     <div style={{
       backgroundColor: '#fab96b',
-      width: 'auto',
-      minHeight: '100vh'
+      minHeight: '100vh',
+      width: '100%'
     }}>
       <CssBaseline />
       <Routes>

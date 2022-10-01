@@ -14,15 +14,16 @@ const AnimeCard = ({ data, isSearch }) => {
                 padding: '5px',
                 margin: '2px',
                 backgroundColor: '#fddcb5',
-                width: { xs: '48.7%', sm: '32.5%', md: '24.5%', lg: 'auto' }
+                width: { xs: '48.7%', sm: '24.3%', md: '19.5%', lg: '180px' }
             }}
         >
             <Link style={{ textDecoration: 'none', }} to={`/animeDetails/${data?.animeId}`}>
                 <Box
                     component='img'
                     src={data?.animeImg}
-                    height='250px'
-                    width='170px'
+                    height='auto'
+                    width='100%'
+                    minHeight='245px'
                 />
             </Link>
             <Box paddingTop='10px'>

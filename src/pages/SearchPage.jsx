@@ -19,7 +19,7 @@ const SearchPage = () => {
         <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            padding: { xs: '0px', sm: '0px', md: '0px', lg: '15px' },
+            padding: { xs: '0px', sm: '5px', md: '10px', lg: '15px' },
             width: '100%'
         }}>
             <Header isHome={false} />

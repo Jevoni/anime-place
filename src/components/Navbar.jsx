@@ -17,25 +17,31 @@ const Navbar = ({ isHome, isGenre }) => {
     }
 
     return (
-        <Box style={{
-            color: 'black',
-            paddingTop: '15px'
+        <Box sx={{
+            paddingTop: '15px',
+            paddingBottom: { xs: '15px', sm: '15px', md: '15px', lg: '0px' }
         }}>
             <Box sx={{
                 display: 'flex',
                 justifyContent: 'center'
             }}>
 
-                <Button variant='filled' style={{ fontWeight: 'bold', border: '2px solid #fddcb5', marginRight: '3px', borderRadius: '20px' }} value='recent-release' onClick={onClickHandler}>Recent Episodes</Button>
-                <Button variant='filled' style={{ fontWeight: 'bold', border: '2px solid #fddcb5', marginRight: '3px', borderRadius: '20px' }} value='popular' onClick={onClickHandler}>Popular Anime</Button>
-                <Button variant='filled' style={{ fontWeight: 'bold', border: '2px solid #fddcb5', marginRight: '3px', borderRadius: '20px' }} value='anime-movies' onClick={onClickHandler}>Anime Movies</Button>
+                <Button variant='filled' sx={{ fontWeight: 'bold', border: '2px solid #fddcb5', marginRight: '3px', borderRadius: '20px', fontSize: { xs: '9.5px', sm: '10px', md: '11px', lg: '12px' } }} value='recent-release' onClick={onClickHandler}>
+                    Recent Episodes
+                </Button>
+                <Button variant='filled' sx={{ fontWeight: 'bold', border: '2px solid #fddcb5', marginRight: '3px', borderRadius: '20px', fontSize: { xs: '9.5px', sm: '10px', md: '11px', lg: '12px' } }} value='popular' onClick={onClickHandler}>
+                    Popular Anime
+                </Button>
+                <Button variant='filled' sx={{ fontWeight: 'bold', border: '2px solid #fddcb5', marginRight: '3px', borderRadius: '20px', fontSize: { xs: '9.5px', sm: '10px', md: '11px', lg: '12px' } }} value='anime-movies' onClick={onClickHandler}>
+                    Anime Movies
+                </Button>
             </Box>
             {isHome ?
-                <Typography paddingTop='20px' paddingBottom='35px' fontSize='16.5px'>Showing: {searchT}</Typography>
+                <Typography className='anime-bar' paddingTop='20px' paddingBottom='35px' fontSize='16.5px'>Showing: {searchT}</Typography>
                 : null
             }
             {isGenre ?
-                <Typography paddingTop='20px' paddingBottom='35px' fontSize='16.5px'>Showing: {genre} animes</Typography>
+                <Typography className='anime-bar' paddingTop='20px' paddingBottom='35px' fontSize='16.5px'>Showing: {genre} animes</Typography>
                 : null
             }
         </Box>

@@ -7,8 +7,13 @@ const Body = ({ data, isSearch }) => {
     if (!data) return 'No Data...'
 
     return (
-        < Box >
-            <Box display='flex' flexWrap='wrap'>
+        <Box sx={{
+            maxWidth: '1840px'
+        }}>
+            <Box sx={{
+                display: 'flex',
+                flexWrap: 'wrap',
+            }}>
                 {data?.map((anime) => (
                     <AnimeCard data={anime} isSearch={isSearch} />
                 ))}
