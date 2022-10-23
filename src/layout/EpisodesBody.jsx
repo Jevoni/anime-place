@@ -7,7 +7,7 @@ import EpisodeCard from '../components/EpisodeCard'
 const EpisodesBody = ({ episodes }) => {
 
     return (
-        <Box margin='10px' padding='15px'>
+        <Box sx={{ margin: '10px', padding: '15px', backgroundColor: '#c78c53', border: '2px solid black' }}>
             <Typography paddingBottom='10px'>Episodes:</Typography>
             <Box display='flex' flexWrap='wrap'>
                 {[...episodes].reverse().map((details) => (

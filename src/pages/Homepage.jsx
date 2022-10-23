@@ -16,26 +16,26 @@ const Homepage = () => {
     if (isFetching) return 'Loading'
 
     return (
-        <Box sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            padding: { xs: '0px', sm: '5px', md: '10px', lg: '15px' },
-            width: '100%'
-        }}>
+        <>
             <Header isHome={true} />
-            <Box
-                sx={{
+            <Box sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                paddingLeft: { xs: '0px', sm: '5px', md: '10px', lg: '15px' },
+                paddingRight: { xs: '0px', sm: '5px', md: '10px', lg: '15px' },
+                paddingBottom: '20px',
+                width: '100%',
+            }}>
+                <Box sx={{
                     display: 'flex',
                     justifyContent: 'space-between',
                     flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row' },
-                    padding: { xs: '0px', sm: '5px', md: '10px', lg: '15px' },
-                }}
-            >
-                <Body data={data} />
-                <Sidebar />
+                }}>
+                    <Body data={data} />
+                    <Sidebar />
+                </Box>
             </Box>
-            <Footer />
-        </Box>
+        </>
     )
 }
 

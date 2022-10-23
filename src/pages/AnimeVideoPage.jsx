@@ -22,34 +22,31 @@ const AnimeVideoPage = () => {
     }, [])
 
     return (
-        <Box sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            padding: { xs: '0px', sm: '5px', md: '10px', lg: '15px' },
-            width: '100%'
-        }}>
+        <>
             <Header isHome={false} />
             <Box sx={{
                 display: 'flex',
-                flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row' },
-                marginTop: '20px',
-                padding: '15px',
-            }}
-            >
-                <AnimeSidebar />
-                <Box
-                    padding='5px'
-                    width='100%'
-                    display='flex'
-                    flexDirection='column'
-                >
-                    <VideoPlayer anime={data} />
-                    <EpisodesBody episodes={data?.episodesList} />
+                flexDirection: 'column',
+                paddingLeft: { xs: '0px', sm: '5px', md: '10px', lg: '15px' },
+                paddingRight: { xs: '0px', sm: '5px', md: '10px', lg: '15px' },
+                paddingBottom: '20px',
+                width: '100%'
+            }}>
+                <Box sx={{
+                    display: 'flex',
+                    flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row' },
+                    marginTop: '20px',
+                    padding: '15px',
+                }}>
+                    <AnimeSidebar />
+                    <Box sx={{ padding: '5px', width: '100%', display: 'flex', flexDirection: 'column' }}>
+                        <VideoPlayer anime={data} />
+                        <EpisodesBody episodes={data?.episodesList} />
+                    </Box>
+                    <GenreSidebar />
                 </Box>
-                <GenreSidebar />
             </Box>
-            <Footer />
-        </Box>
+        </>
     )
 }
 
