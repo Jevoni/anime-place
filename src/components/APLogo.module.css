@@ -10,9 +10,8 @@
 .logo {
     color: #FF6347;
     text-decoration: none;
-    font-family: OnePiece;
     font-weight: bolder;
-    font-size: 30px;
-    text-shadow: 2.5px 2.5px black;
+    font-size: 20px;
+    text-shadow: 2px 2px black;
     padding: 0;
 }

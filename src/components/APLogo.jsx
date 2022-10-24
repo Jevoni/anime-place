@@ -18,6 +18,7 @@ const APLogo = () => {
         <Box sx={{
             display: 'flex',
             justifyContent: { xs: 'center', lg: 'flex-start' },
+            marginLeft: { lg: '10px' }
         }}>
             {/* <Box component='img' sx={{ height: { xs: '20px', md: '30px' } }}
                 src="https://see.fontimg.com/api/renderfont4/zAqL/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzAwMDAwMCIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/QU5JTUUgUExBQ0U/one-piece.png"
