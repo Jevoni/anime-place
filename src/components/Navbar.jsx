@@ -31,11 +31,13 @@ const Navbar = ({ isHome, isGenre }) => {
             </Box>
             {isHome ?
                 <Typography className='anime-bar' paddingBottom='10px' fontSize='12px'>Showing: {searchT}</Typography>
-                : null
+                :
+                null
             }
             {isGenre ?
                 <Typography className='anime-bar' paddingBottom='10px' fontSize='12px'>Showing: {genre} animes</Typography>
-                : null
+                :
+                null
             }
         </Box>
     )

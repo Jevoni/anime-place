@@ -5,15 +5,27 @@ import { useGetAnimeDetailsQuery } from '../services/animeApi'
 
 import Header from '../layout/Header'
 import Sidebar from '../layout/GenreSidebar'
-import Footer from '../layout/Footer'
 import AnimeDetailsBody from '../layout/AnimeDetailsBody'
 import AnimeSidebar from '../layout/AnimeSidebar'
 import EpisodesBody from '../layout/EpisodesBody'
+import Loading from '../components/Loading'
 
 const AnimeDetailsPage = () => {
     const animeId = useParams()
     const { data, isFetching } = useGetAnimeDetailsQuery(animeId.animeId)
-    if (isFetching) return 'Loading...'
+    if (isFetching) return (
+        <>
+            <Header isHome={false} />
+            <Box sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '70vh'
+            }}>
+                <Loading />
+            </Box>
+        </>
+    )
 
     return (
         <>

@@ -4,6 +4,8 @@ import ReactPlayer from 'react-player'
 import { useParams } from 'react-router-dom'
 import { useGetStreamingUrlQuery } from '../services/animeApi'
 
+import Loading from '../components/Loading'
+
 const VideoPlayer = ({ anime }) => {
     const episodeId = useParams()
     const { data, isFetching } = useGetStreamingUrlQuery(episodeId)
@@ -17,11 +19,17 @@ const VideoPlayer = ({ anime }) => {
             </Typography>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                 <Box sx={{ boxShadow: '0px 0px 5px 2px black', width: { xs: '100%', sm: '95%', lg: '90%' } }}>
-                    <ReactPlayer width='100%' height='auto' controls url={data?.sources_bk[0].file} config={{
-                        file: {
-                            forceHLS: true
-                        }
-                    }} />
+                    {(isFetching) ?
+                        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px' }}>
+                            <Loading />
+                        </Box>
+                        :
+                        <ReactPlayer width='100%' height='auto' controls url={data?.sources_bk[0].file} config={{
+                            file: {
+                                forceHLS: true
+                            }
+                        }} />
+                    }
                 </Box>
             </Box>
             <Typography paddingTop='15px'>

@@ -6,13 +6,25 @@ import { useParams } from 'react-router-dom'
 import Header from '../layout/Header'
 import Body from '../layout/Body'
 import Sidebar from '../layout/GenreSidebar'
-import Footer from '../layout/Footer'
+import Loading from '../components/Loading'
 
 const GenresPage = () => {
     const genre = useParams()
     const { data, isFetching } = useGetGenreQuery(genre)
 
-    if (isFetching) return 'Loading'
+    if (isFetching) return (
+        <>
+            <Header isGenre={true} />
+            <Box sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '70vh'
+            }}>
+                <Loading />
+            </Box>
+        </>
+    )
 
     return (
         <>

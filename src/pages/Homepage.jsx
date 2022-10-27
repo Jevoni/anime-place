@@ -7,13 +7,25 @@ import { searchType } from '../services/searchSlice'
 import Header from '../layout/Header'
 import Body from '../layout/Body'
 import Sidebar from '../layout/GenreSidebar'
-import Footer from '../layout/Footer'
+import Loading from '../components/Loading'
 
 const Homepage = () => {
     const search = useSelector(searchType)
     const { data, isFetching } = useGetRequestQuery(search)
 
-    if (isFetching) return 'Loading'
+    if (isFetching) return (
+        <>
+            <Header isHome={true} />
+            <Box sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '70vh'
+            }}>
+                <Loading />
+            </Box>
+        </>
+    )
 
     return (
         <>

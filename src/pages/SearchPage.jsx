@@ -2,18 +2,29 @@ import React, { useEffect, useState } from 'react'
 import { Box } from '@mui/material'
 import { useGetAnimeSearchQuery } from '../services/animeApi'
 import { useParams } from 'react-router-dom'
-import { search } from '../services/searchSlice'
 
 import Header from '../layout/Header'
 import Body from '../layout/Body'
 import Sidebar from '../layout/GenreSidebar'
-import Footer from '../layout/Footer'
+import Loading from '../components/Loading'
 
 const SearchPage = () => {
     const params = useParams()
     const { data, isFetching } = useGetAnimeSearchQuery(params)
 
-    if (isFetching) return 'Loading'
+    if (isFetching) return (
+        <>
+            <Header isHome={false} />
+            <Box sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '70vh'
+            }}>
+                <Loading />
+            </Box>
+        </>
+    )
 
     return (
         <>

@@ -6,9 +6,9 @@ import { useGetRequestQuery, useGetAnimeDetailsQuery } from '../services/animeAp
 import Header from '../layout/Header'
 import AnimeSidebar from '../layout/AnimeSidebar'
 import GenreSidebar from '../layout/GenreSidebar'
-import Footer from '../layout/Footer'
 import VideoPlayer from '../layout/VideoPlayer'
 import EpisodesBody from '../layout/EpisodesBody'
+import Loading from '../components/Loading'
 
 const AnimeVideoPage = () => {
     const episodeId = useParams()
@@ -20,6 +20,19 @@ const AnimeVideoPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
+    if (isFetching) return (
+        <>
+            <Header isHome={false} />
+            <Box sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '70vh'
+            }}>
+                <Loading />
+            </Box>
+        </>
+    )
 
     return (
         <>
