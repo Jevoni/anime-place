@@ -5,7 +5,7 @@ const animeHeaders = {
     'X-RapidAPI-Host': 'gogoanime2.p.rapidapi.com'
 }
 
-const baseUrl = 'https://gogoanime2.p.rapidapi.com'
+const baseUrl = 'https://gogoanime.consumet.stream'
 
 const createRequest = (url) => ({ url, headers: animeHeaders })
 
